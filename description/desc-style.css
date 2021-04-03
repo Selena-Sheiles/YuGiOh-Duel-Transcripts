@@ -39,7 +39,10 @@ p {
     font-variant: small-caps;
     font-weight: bold;
 }
-#summonReq, #info > p {
+#summonReq, #info > .condition {
+    font-size: 0.8em;
+}
+#info > p {
     font-size: 0.8em;
     text-align: justify;
 }
