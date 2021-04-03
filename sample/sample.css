@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    font-size: 90%;
+    font-family: sans-serif;
+}
+p {
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+}
+#header, #info, #footer {
+    margin-bottom: 5px;
+    padding: 0.5em;
+    background-clip: padding-box;
+}
+#header {
+    background-color: #ffff66;
+}
+#info {
+    background-color: #ccff66;
+}
+#footer {
+    background-color: #66ffff;
+}
+#basic {
+    font-size: 1.2em;
+}
+#basic > .type {
+    display: inline-block;
+    width: 5em;
+    text-align: center;
+}
+#evo {
+    font-size: 0.8em;
+    font-style: italic;
+}
+#evo > .evoStage {
+    display: inline-block;
+    width: 5em;
+}
+#ability > .infoType, #info > .attack > .cost, #footer > div > .infoType {
+    display: inline-block;
+    width: 8em;
+}
+.name {
+    font-weight: bold;
+}
+.type {
+    font-variant: small-caps;
+    font-weight: lighter;
+}
+.infoType, .evoStage, .cost, .damage {
+    font-variant: small-caps;
+    font-weight: bold;
+}
+.infoDesc {
+    font-size: 0.8em;
+    text-indent: 3em;
+    text-align: justify;
+}
+.infoDesc .type {
+    font-size: 1.1em;
+}
+.damage {
+    display: inline-block;
+    width: 3.5em;
+    text-align: right;
+}

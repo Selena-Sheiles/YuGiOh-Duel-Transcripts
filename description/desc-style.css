@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    font-size: 90%;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+p {
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+}
+#name, #header, #info {
+    margin-bottom: 5px;
+    background-clip: padding-box;
+}
+#name {
+    font-size: 1.2em;
+    font-variant: small-caps;
+    background-color: #e6ffb3;
+    padding: 0.2em;
+    font-family: "Georgia";
+}
+#header {
+    background-color: #b3ffff;
+    padding: 0.5em;
+    font-family: "Georgia";
+}
+#info {
+    background-color: #ffffb3;
+    padding: 0.5em;
+}
+#header > span > .infoType, #attack, #defense {
+    display: inline-block;
+    width: 6em;
+}
+#monsterType {
+    font-variant: small-caps;
+    font-weight: bold;
+}
+#summonReq, #info > p {
+    font-size: 0.8em;
+    text-align: justify;
+}
+#info > p.effect {
+    text-indent: 3em;
+}
+#info > p.effect > .condition {
+    color: green;
+}
+#info > p.effect > .activation {
+    color: red;
+}
+#info > p.effect > .resolution {
+    color: blue;
+}
+[class|="infoType"] {
+    font-variant: small-caps;
+    font-weight: bold;
+}

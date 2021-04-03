@@ -13,7 +13,7 @@
         .then(json => {
           var cardID = json.data[0].id;
           document.getElementById("cardArt").src = "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/" + cardID + ".jpg";
-          document.getElementById("cardDescription").data = "description/" + cardID + ".txt";
+          document.getElementById("cardDesc").src = "description/" + cardID + ".html";
         })
     }
   </script>
@@ -28,22 +28,23 @@
     }
     #cardInfo {
       flex-shrink: 0;
+      padding: 5px;
       display: flex;
       flex-direction: column;
     }
-    #turnDescription {
+    #duelScript {
       padding: 10px;
       flex-grow: 1;
       overflow-y: scroll;
     }
     #cardArt {
-      margin: 5px;
       width: 312px;
       flex-shrink: 0;
     }
-    #cardDescription {
-      margin: 5px;
+    #cardDesc {
       flex-grow: 1;
+      border: none;
+      padding-top: 5px;
     }
     .cardName {
       color: blue;
@@ -55,10 +56,10 @@
 
 <body>
   <div id="cardInfo">
-    <img id="cardArt" src="sample.PNG">
-    <object id="cardDescription" type="text/plain" data="sample.txt"></object>
+    <img id="cardArt" src="sample/sample.PNG">
+    <iframe id="cardDesc" src="sample/sample.html"></iframe>
   </div>
-  <div id="turnDescription">
+  <div id="duelScript">
     <p class="cardName">Divine Arsenal AA-ZEUS - Sky Thunder</p>
     <p class="cardName">Eldlich the Golden Lord</p>
     <p class="cardName">Virtual World Kyubi - Shenshen</p>
