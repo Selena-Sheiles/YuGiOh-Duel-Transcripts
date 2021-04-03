@@ -1,0 +1,11 @@
+[Xyz Monster] 
+Divine Arsenal AA-ZEUS - Sky Thunder 
+[LIGHT] attribute
+Rank 12
+ATK/3000 DEF/3000
+
+[Machine / Xyz / Effect]
+2 Level 12 monsters
+Once per turn, if an Xyz Monster battled this turn, you can also Xyz Summon "Divine Arsenal AA-Zeus - Sky Thunder" by using 1 Xyz Monster you control as material (transfer its materials to this card).
+    (1) (Quick Effect): You can detach 2 materials from this card; send all other cards from the field to the GY.
+    (2) Once per turn, if another card(s) you control is destroyed by battle or by an opponent's card effect: You can attach 1 card from your hand, Deck, or Extra Deck to this card as material.

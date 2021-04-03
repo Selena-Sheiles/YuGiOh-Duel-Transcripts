@@ -1,0 +1,12 @@
+[Synchro Monster]
+Virtual World Kyubi - Shenshen
+[WIND] attribute
+LV 9
+ATK/2800 DEF/2400
+
+[Psychic / Synchro / Effect]
+1 Tuner + 1+ non-Tuner monsters
+You can only use effect (2) and (3) of "Virtual World Kyubi - Shenshen" once per turn.
+    (1) Any card sent from the field to the GY is banished instead.
+    (2) When your monster declares an attack: You can return 1 banished monster to the owner's GY.
+    (3) During your Main Phase, except the turn this card was sent to the GY: You can banish 2 other monsters from your GY with different original Types and Attributes from each other; Special Summon this card from your GY.

@@ -1,0 +1,66 @@
+<head>
+	<meta charset="UTF-8">
+  <script>
+    window.onload = function(){
+      var cards = document.getElementsByClassName("cardName");
+      for (var card of cards)
+        card.addEventListener("click", displayCard);
+    }
+    function displayCard(){
+      var url = "https://db.ygoprodeck.com/api/v7/cardinfo.php?name=" + encodeURIComponent(this.innerHTML);
+      fetch(url)
+        .then(response => response.json())
+        .then(json => {
+          var cardID = json.data[0].id;
+          document.getElementById("cardArt").src = "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/" + cardID + ".jpg";
+          document.getElementById("cardDescription").data = "description/" + cardID + ".txt";
+        })
+    }
+  </script>
+  <style>
+    body {
+      margin: 0;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: stretch;
+    }
+    #cardInfo {
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    #turnDescription {
+      padding: 10px;
+      flex-grow: 1;
+      overflow-y: scroll;
+    }
+    #cardArt {
+      margin: 5px;
+      width: 312px;
+      flex-shrink: 0;
+    }
+    #cardDescription {
+      margin: 5px;
+      flex-grow: 1;
+    }
+    .cardName {
+      color: blue;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="cardInfo">
+    <img id="cardArt" src="sample.png">
+    <object id="cardDescription" type="text/plain" data="sample.txt"></object>
+  </div>
+  <div id="turnDescription">
+    <p class="cardName">Divine Arsenal AA-ZEUS - Sky Thunder</p>
+    <p class="cardName">Eldlich the Golden Lord</p>
+    <p class="cardName">Virtual World Kyubi - Shenshen</p>
+  </div>
+</body>

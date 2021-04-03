@@ -1,0 +1,12 @@
+Charizard [Fire] 150HP
+[Stage 2] Evolves from Chameleon
+
+[Ability] Roaring Resolve
+  Once during your turn (before you attack), you may put 2 damage counters on this Pokémon. If you do, search your deck up to 2 [Fire] Energy cards and attach them to this Pokémon. Then, shuffle your deck.
+
+[R][R] Continuous Blaze Ball [30+]
+  Discard all [Fire] Energy from this Pokémon. This attack does 50 more damage for each card you discarded in this way.
+
+[Weakness] [W] x2
+[Resistance] --
+[Retreat] [C][C]
