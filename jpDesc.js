@@ -1,5 +1,5 @@
 // cardName: string, case sensitive
-// Return the effect string of the card
+// Return a promise ( getJpDesc().then((str) => { ... }) )
 function getJpDesc(cardName)
 {
 	cardName = cardName.replace(/ /g, `_`);
