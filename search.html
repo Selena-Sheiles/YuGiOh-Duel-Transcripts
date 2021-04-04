@@ -8,8 +8,10 @@
       fetch(url)
         .then(response => response.json())
         .then(json => {
-          if (json.data[0].name != cardName)
+          if (json.data[0].name != cardName) {
+            window.alert("Card not found!");
             return false;
+          }
           var card = document.createElement("li");
           card.appendChild(document.createTextNode(cardName));
           card.style.fontWeight = "bold";
@@ -22,7 +24,7 @@
           for (var element of list.childNodes) {
             if (cardName < element.innerHTML) {
               list.insertBefore(card, element);
-              return;
+              return true;
             }
           }
           list.appendChild(card);
