@@ -5,13 +5,12 @@
       event.preventDefault();
       var cardName = this.input.value;
       var url = "https://db.ygoprodeck.com/api/v7/cardinfo.php?name=" + encodeURIComponent(cardName);
-      fetch(url)
-        .then(response => response.json())
-        .then(json => {
-          if (json.data[0].name != cardName) {
-            window.alert("Card not found!");
-            return false;
-          }
+      fetch(url).then(response => {
+        if (response.status == 400) {
+          alert("Card not found!");
+          return;
+        }
+        response.json().then(json => {
           var card = document.createElement("li");
           card.appendChild(document.createTextNode(cardName));
           card.style.fontWeight = "bold";
@@ -24,11 +23,12 @@
           for (var element of list.childNodes) {
             if (cardName < element.innerHTML) {
               list.insertBefore(card, element);
-              return true;
+              return;
             }
           }
           list.appendChild(card);
         });
+      });
     }
     function clearCards(){
       document.getElementById("cardNames").innerHTML = "";
