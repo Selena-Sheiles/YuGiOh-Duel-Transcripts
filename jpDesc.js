@@ -1,5 +1,5 @@
 // cardName: string, case sensitive
-// Return a HTML <span> string that can be embedded directly to obj.innerHTML
+// Return the effect string of the card
 function getJpDesc(cardName)
 {
 	cardName = cardName.replace(/ /g, `_`);
@@ -9,7 +9,7 @@ function getJpDesc(cardName)
 		.then((text) => {
 			let start = text.indexOf(`<span lang="ja">`, text.search(/<th.+?japanese<\/th>/gi));
 			let end = text.indexOf(`</span>`, start + 1);
-			return text.substring(start, end);
+			return text.substring(start + 16, end).replace(/(<ruby lang="ja"><rb>|<\/rb.*?<\/ruby>)/gi, '');
 		});
 }
 
