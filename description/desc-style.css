@@ -31,7 +31,7 @@ p {
     background-color: #ffffb3;
     padding: 0.5em;
 }
-#header > span:not(#attack, #defense) > .infoType, #attack, #defense {
+#header > *:not(#attack, #defense) > .infoType, #attack, #defense {
     display: inline-block;
     width: 6em;
 }
@@ -39,11 +39,10 @@ p {
     font-variant: small-caps;
     font-weight: bold;
 }
-#summonReq, #info > .condition {
+#info > *:not(#monsterType) {
     font-size: 0.8em;
 }
-#info > p {
-    font-size: 0.8em;
+#info > *:not(span) {
     text-align: justify;
 }
 #info > p.effect {

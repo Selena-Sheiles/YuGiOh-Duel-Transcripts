@@ -1,7 +1,7 @@
 <head>
   <meta charset="UTF-8">
   <script>
-    function appendCard(){
+    function appendCard() {
       event.preventDefault();
       var cardName = this.input.value;
       var url = "https://db.ygoprodeck.com/api/v7/cardinfo.php?name=" + encodeURIComponent(cardName);
@@ -11,6 +11,7 @@
           return;
         }
         response.json().then(json => {
+          cardName = json.data[0].name;
           var card = document.createElement("li");
           card.appendChild(document.createTextNode(cardName));
           card.style.fontWeight = "bold";
@@ -25,12 +26,16 @@
               list.insertBefore(card, element);
               return;
             }
+            if (cardName == element.innerHTML) {
+              alert("Duplicate!");
+              return;
+            }
           }
           list.appendChild(card);
         });
       });
     }
-    function clearCards(){
+    function clearCards() {
       document.getElementById("cardNames").innerHTML = "";
     }
   </script>

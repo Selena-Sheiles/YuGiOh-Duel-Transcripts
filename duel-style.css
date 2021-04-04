@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: stretch;
+}
+p {
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+}
+#cardInfo {
+    flex-shrink: 0;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+#duelScript {
+    padding: 5px;
+    flex-grow: 1;
+    overflow-y: scroll;
+}
+#cardArt {
+    width: 312px;
+    flex-shrink: 0;
+}
+#cardDesc {
+    flex-grow: 1;
+    border: none;
+    padding-top: 5px;
+}
+#duelScript > button {
+    display: none;
+}
+#duelScript > div {
+    margin-bottom: 5px;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    background-clip: padding-box;
+    font-size: 0.8em;
+}
+#duelScript > .turn-p1 {
+    background-color: #e6ffb3;
+}
+#duelScript > .turn-p2 {
+    background-color: #b3ffff;
+}
+#duelScript > div > p {
+    text-indent: 20px;
+    text-align: justify;
+}
+#duelScript > div > p.note {
+    font-size: 0.8em;
+    font-style: italic;
+}
+#duelScript > div > ul {
+    font-size: 0.8em;
+    text-indent: 35px;
+}
+.cardName {
+    color: blue;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+}
