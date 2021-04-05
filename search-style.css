@@ -6,9 +6,14 @@ body {
     flex-direction: row-reverse;
     align-items: stretch;
 }
+p {
+    margin: 0;
+    padding: 0;
+}
 #cardInfo {
     flex-shrink: 0;
     padding: 5px;
+    width: 280px;
     display: flex;
     flex-direction: column;
     overflow-y: auto;
@@ -22,12 +27,13 @@ body {
 }
 #cardImage {
     flex-shrink: 0;
-    height: 60vh;
-    width: auto;
     padding-bottom: 5px;
 }
 #cardDesc {
     flex-grow: 1;
+}
+#jpDesc {
+    font-size: 0.6em;
 }
 #searchForm {
     flex-shrink: 0;
