@@ -1,4 +1,4 @@
-function appendCard() {
+function appendCard(event) {
     event.preventDefault();
     var cardName = this.input.value;
     var url = "https://db.ygoprodeck.com/api/v7/cardinfo.php?name=" + encodeURIComponent(cardName);
