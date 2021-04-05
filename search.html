@@ -1,76 +1,24 @@
 <head>
   <meta charset="UTF-8">
-  <script>
-    function appendCard() {
-      event.preventDefault();
-      var cardName = this.input.value;
-      var url = "https://db.ygoprodeck.com/api/v7/cardinfo.php?name=" + encodeURIComponent(cardName);
-      fetch(url).then(response => {
-        if (response.status == 400) {
-          alert("Card not found!");
-          return;
-        }
-        response.json().then(json => {
-          cardName = json.data[0].name;
-          var card = document.createElement("li");
-          card.appendChild(document.createTextNode(cardName));
-          card.style.fontWeight = "bold";
-          card.style.color = "blue";
-          card.style.cursor = "pointer";
-          card.addEventListener("click", function(){
-            document.getElementById("cardImage").src = json.data[0].card_images[0].image_url;
-          });
-          var list = document.getElementById("cardNames");
-          for (var element of list.childNodes) {
-            if (cardName < element.innerHTML) {
-              list.insertBefore(card, element);
-              return;
-            }
-            if (cardName == element.innerHTML) {
-              alert("Duplicate!");
-              return;
-            }
-          }
-          list.appendChild(card);
-        });
-      });
-    }
-    function clearCards() {
-      document.getElementById("cardNames").innerHTML = "";
-    }
-  </script>
-  <style>
-    body {
-      margin: 0;
-      height: 100%;
-      width: 100%;
-      display: flex;
-      flex-direction: row-reverse;
-      align-items: stretch;
-    }
-    #cardImage {
-      flex-shrink: 0;
-      padding: 5px;
-    }
-    body > div {
-      flex-grow: 1;
-      padding: 5px;
-    }
-    #cardNames {
-      padding-top: 1em;
-      padding-left: 3em;
-    }
-  </style>
+  <link rel="stylesheet" href="search-style.css">
+  <script src="search-script.js"></script>
 </head>
 
 <body>
-  <img id="cardImage">
-  <div>
-    <form id="search-form" onsubmit="appendCard(event)">
+  <div id="cardInfo">
+    <img id="cardImage">
+    <div id="cardDesc">
+      <p id="jpDesc"></p>
+    </div>
+  </div>
+  <div id="searchArea">
+    <form id="searchForm" onsubmit="appendCard(event)">
       <input type="submit" value="Search">
       <input type="text" id="input">
       <input type="reset" value="Clear" onclick="clearCards()">
     </form>
-    <ul id="cardNames"></ul>
+    <div id="searchResults">
+      <ul id="cardNames"></ul>
+    </div>
   </div>
 </body>

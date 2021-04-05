@@ -45,6 +45,9 @@ p {
 #info > *:not(span) {
     text-align: justify;
 }
+#info > p.flavorText {
+    font-style: italic;
+}
 #info > p.effect {
     text-indent: 3em;
 }
