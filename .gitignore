@@ -1,3 +1,5 @@
 description/desc-monster.html
 description/desc-spell-trap.html
 duel-style-local.css
+duel-script-local.js
+duel-script-server.js
