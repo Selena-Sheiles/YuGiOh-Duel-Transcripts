@@ -4,7 +4,7 @@ function checkHTML() {
         var url = "https://db.ygoprodeck.com/api/v7/cardinfo.php?name=" + encodeURIComponent(card.innerHTML);
         return fetch(url).then(response => {
             return response.json().then(json => {
-                var cardID = json.data[0].name;
+                var cardID = json.data[0].id;
                 return fetch(`description/${cardID}.html`).then(response => {
                     if (response.status == 404) {
                         card.style.backgroundColor = "red";
