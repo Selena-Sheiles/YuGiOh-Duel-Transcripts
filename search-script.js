@@ -1,5 +1,6 @@
 function appendCard() {
     event.preventDefault();
+    document.getElementById("searchForm").reset();
     var cardName = this.input.value;
     var url = "https://db.ygoprodeck.com/api/v7/cardinfo.php?name=" + encodeURIComponent(cardName);
     fetch(url).then(response => {
