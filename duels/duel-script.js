@@ -12,7 +12,7 @@ function displayCard() {
         response.json().then(json => {
             var cardID = json.data[0].id;
             document.getElementById("cardArt").src = "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/" + cardID + ".jpg";
-            document.getElementById("cardDesc").src = "description/" + cardID + ".html";
+            document.getElementById("cardDesc").src = "../../../description/" + cardID + ".html";
         });
     });
 }
@@ -54,7 +54,7 @@ function checkHTML() {
         return fetch(url).then(response => {
             return response.json().then(json => {
                 var cardID = json.data[0].id;
-                return fetch("description/" + cardID + ".html").then(response => {
+                return fetch("../../../description/" + cardID + ".html").then(response => {
                     if (response.status == 404) {
                         card.style.backgroundColor = "red";
                         card.style.color = "white";
