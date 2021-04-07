@@ -5,7 +5,8 @@ window.onload = function() {
 }
 
 function displayCard() {
-    var url = "https://db.ygoprodeck.com/api/v7/cardinfo.php?name=" + encodeURIComponent(this.innerHTML);
+    var cardName = htmlDecode(this);
+    var url = "https://db.ygoprodeck.com/api/v7/cardinfo.php?name=" + cardName;
     fetch(url).then(response => {
         if (response.status == 400)
             return;
@@ -20,7 +21,8 @@ function displayCard() {
 function validateCards() {
     var cards = document.getElementsByClassName("cardName");
     Promise.all([...cards].map(card => {
-        var url = "https://db.ygoprodeck.com/api/v7/cardinfo.php?name=" + encodeURIComponent(card.innerHTML);
+        var cardName = htmlDecode(card);
+        var url = "https://db.ygoprodeck.com/api/v7/cardinfo.php?name=" + cardName;
         return fetch(url).then(response => {
             if (response.status == 400) {
                 card.style.color = "red";
@@ -50,7 +52,8 @@ function validateCards() {
 function checkHTML() {
     var cards = document.getElementsByClassName("cardName");
     Promise.all([...cards].map(card => {
-        var url = "https://db.ygoprodeck.com/api/v7/cardinfo.php?name=" + encodeURIComponent(card.innerHTML);
+        var cardName = htmlDecode(card);
+        var url = "https://db.ygoprodeck.com/api/v7/cardinfo.php?name=" + cardName;
         return fetch(url).then(response => {
             return response.json().then(json => {
                 var cardID = json.data[0].id;
@@ -73,4 +76,9 @@ function checkHTML() {
         else
             alert("HTMLs missing");
     });
+}
+
+function htmlDecode(card) {
+    var doc = new DOMParser().parseFromString(card.innerHTML, "text/html");
+    return encodeURIComponent(doc.documentElement.textContent);
 }
