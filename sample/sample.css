@@ -11,61 +11,63 @@ p {
     margin-top: 0.2em;
     margin-bottom: 0.2em;
 }
-#header, #info, #footer {
+#name, #header, #info {
     margin-bottom: 5px;
-    padding: 0.5em;
     background-clip: padding-box;
 }
+#name {
+    font-size: 1.2em;
+    font-variant: small-caps;
+    background-color: #e6ffb3;
+    padding: 0.2em;
+    font-family: "Georgia";
+}
 #header {
-    background-color: #ffff66;
+    background-color: #b3ffff;
+    padding: 0.5em;
+    font-family: "Georgia";
 }
 #info {
-    background-color: #ccff66;
+    background-color: #ffffb3;
+    padding: 0.5em;
 }
-#footer {
-    background-color: #66ffff;
-}
-#basic {
-    font-size: 1.2em;
-}
-#basic > .type {
+#header > *:not(#attack, #defense) > .infoType, #attack, #defense {
     display: inline-block;
-    width: 5em;
-    text-align: center;
+    width: 6em;
 }
-#evo {
-    font-size: 0.8em;
-    font-style: italic;
-}
-#evo > .evoStage {
-    display: inline-block;
-    width: 5em;
-}
-#ability > .infoType, #info > .attack > .cost, #footer > div > .infoType {
-    display: inline-block;
-    width: 8em;
-}
-.name {
-    font-weight: bold;
-}
-.type {
-    font-variant: small-caps;
-    font-weight: lighter;
-}
-.infoType, .evoStage, .cost, .damage {
+#monsterType {
     font-variant: small-caps;
     font-weight: bold;
 }
-.infoDesc {
+#info > *:not(#monsterType) {
     font-size: 0.8em;
-    text-indent: 3em;
+}
+#info > *:not(span) {
     text-align: justify;
 }
-.infoDesc .type {
-    font-size: 1.1em;
+#info > p.flavorText {
+    font-style: italic;
 }
-.damage {
-    display: inline-block;
-    width: 3.5em;
-    text-align: right;
+#info > p.effect {
+    text-indent: 1.5em;
+}
+#info > p.effect > .condition {
+    color: green;
+}
+#info > p.effect > .activation {
+    color: red;
+}
+#info > p.effect > .resolution {
+    color: blue;
+}
+#info > ul {
+    margin: 0;
+    padding: 0;
+    /* text-indent: 1.5em; */
+    padding-left: 1.5em;
+    list-style-position: inside;
+}
+.infoType {
+    font-variant: small-caps;
+    font-weight: bold;
 }
