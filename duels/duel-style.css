@@ -10,6 +10,9 @@ p {
     margin-top: 0.2em;
     margin-bottom: 0.2em;
 }
+sup {
+    line-height: 0;
+}
 #cardInfo {
     flex-shrink: 0;
     padding: 5px;
@@ -20,6 +23,7 @@ p {
     padding: 5px;
     flex-grow: 1;
     overflow-y: scroll;
+    line-height: 1.5;
 }
 #cardArt {
     width: 312px;
@@ -47,7 +51,7 @@ p {
 }
 #duelScript > div > p {
     text-indent: 20px;
-    text-align: justify;
+    /* text-align: justify; */
 }
 #duelScript > div > p.note {
     font-size: 0.8em;
