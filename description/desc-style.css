@@ -45,6 +45,9 @@ p {
 #info > *:not(span) {
     text-align: justify;
 }
+#info > span.condition {
+    font-style: italic;
+}
 #info > p.flavorText {
     font-style: italic;
 }
