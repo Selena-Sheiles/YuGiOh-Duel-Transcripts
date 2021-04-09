@@ -58,8 +58,12 @@ sup {
     font-style: italic;
 }
 #duelScript > div > ul {
+    margin: 0;
+    padding: 0;
+    /* text-indent: 35px; */
+    padding-left: 20px;
+    list-style-position: inside;
     font-size: 0.8em;
-    text-indent: 35px;
 }
 .cardName {
     color: blue;
