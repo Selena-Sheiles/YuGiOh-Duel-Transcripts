@@ -11,8 +11,10 @@ function displayCard() {
         if (response.status == 400)
             return;
         response.json().then(json => {
+            var arr = json.data[0].card_images;
+            var cardImageID = arr[Math.floor(Math.random() * arr.length)].id;
+            document.getElementById("cardArt").src = "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/" + cardImageID + ".jpg";
             var cardID = json.data[0].id;
-            document.getElementById("cardArt").src = "https://storage.googleapis.com/ygoprodeck.com/pics_artgame/" + cardID + ".jpg";
             document.getElementById("cardDesc").src = "../../../description/" + cardID + ".html";
         });
     });
