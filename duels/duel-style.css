@@ -51,19 +51,43 @@ sup {
 }
 #duelScript > div > p {
     text-indent: 20px;
-    /* text-align: justify; */
 }
-#duelScript > div > p.note, #duelScript > div > p.error {
+#duelScript p.activation {
+    margin-bottom: -0.2em;
+}
+#duelScript p.resolution {
+    margin-top: -0.2em;
+}
+#duelScript .chain > p:first-child {
+    margin-top: -0.2em;
+}
+#duelScript .chain > p:last-child {
+    margin-bottom: -0.2em;
+}
+#duelScript p.note, #duelScript p.error {
     font-size: 0.8em;
     font-style: italic;
 }
-#duelScript > div > ul {
+#duelScript ul {
     margin: 0;
     padding: 0;
-    /* text-indent: 35px; */
-    padding-left: 20px;
     list-style-position: inside;
     font-size: 0.8em;
+}
+#duelScript > div > ul {
+    padding-left: 20px;
+}
+#duelScript .chain {
+    margin-left: 2px;
+    border-left: 3px double blue;
+    padding: 0.6em;
+    padding-right: 0;
+}
+#duelScript .chain:last-child {
+    padding-bottom: 0;
+}
+#duelScript > div > .chain {
+    margin-left: 22px;
 }
 .cardName {
     color: blue;
