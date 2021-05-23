@@ -24,11 +24,11 @@ function appendCard() {
                 });
                 var list = document.getElementById("cardNames");
                 for (var li of list.childNodes) {
-                    if (cardName < li.innerHTML) {
+                    if (card.innerHTML < li.innerHTML) {
                         list.insertBefore(card, li);
                         return;
                     }
-                    if (cardName == li.innerHTML) {
+                    if (card.innerHTML == li.innerHTML) {
                         alert("Duplicate!");
                         return;
                     }
@@ -40,5 +40,20 @@ function appendCard() {
 }
 
 function clearCards() {
-    document.getElementById("cardNames").innerHTML = "";
+    var input = document.getElementById("searchForm").input;
+    if (input.value == "clear") {
+        document.getElementById("cardNames").innerHTML = "";
+        return;
+    }
+    var card = document.createElement("span");
+    card.appendChild(document.createTextNode(input.value));
+    var cardName = card.innerHTML;
+    var list = document.getElementById("cardNames");
+    for (var li of list.childNodes) {
+        if (cardName == li.innerHTML) {
+            list.removeChild(li);
+            return;
+        }
+    }
+    alert("Type \"clear\" to clear");
 }

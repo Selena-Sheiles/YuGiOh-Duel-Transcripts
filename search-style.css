@@ -13,7 +13,7 @@ p {
 #cardInfo {
     flex-shrink: 0;
     padding: 5px;
-    width: 280px;
+    /* width: 280px; */
     display: flex;
     flex-direction: column;
     overflow-y: auto;
@@ -27,9 +27,10 @@ p {
 }
 #cardImage {
     flex-shrink: 0;
-    padding-bottom: 5px;
+    height: 100%;
 }
 #jpDesc {
+    padding-top: 5px;
     font-size: 0.6em;
 }
 #searchForm {
